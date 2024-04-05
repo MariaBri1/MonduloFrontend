@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Form</title>
+    <style>
+        /* 
+      TODO: Terminar la maquetación del formulario del invoice-form añadiendo: Estilos, fuentes, colores
+
+      https://res.cloudinary.com/dz209s6jk/image/upload/v1614355851/Challenges/r4lyr9u4uem9zskskhpv.jpg
+
+      #141625 Background
+
+      #826fe9 Subtitle 1
+      #70758b Subtitle 2
+
+      #1f213a Input background
+
+      #7c5df9 Button Save Changes
+      #252944 Button Cancel
+    */
+    </style>
+    <link rel="stylesheet" href="./invoice-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://fontawesome.com/icons">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <h1 class="header__title">Edit #XM9141</h1>
+        </header>
+
+        <section>
+            <form class="form">
+                <h2 class="form__title">Bill Form</h2>
+
+                <label class="form__label">
+                    Street Address
+                    <input class="form__input" type="text" placeholder="Ex. 19 Union Terrace" />
+                </label>
+
+                <div class="form__group">
+                    <label class="form__label">
+                        City
+                        <input class="form__input" type="text" placeholder="Ex. Union Terrace" />
+                    </label>
+                    <label class="form__label">
+                        Post Code
+                        <input class="form__input" type="text" placeholder="Ex. 154879" />
+                    </label>
+                    <label class="form__label">
+                        Country
+                        <input class="form__input" type="text" placeholder="Ex. 19 Union Terrace" />
+                    </label>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <form class="form">
+                <h2 class="form__title"></h2>
+                <h2 class="form__title">Bill to</h2>
+
+                <label class="form__label">
+                    Client's Name
+                    <input class="form__input" type="text" placeholder="Ex. Jorge " />
+                </label>
+
+
+                <label class="form__label">
+                    Client's Email
+                    <input class="form__input" type="text" placeholder="Ex. jorge@gmail.com " />
+                </label>
+
+                <label class="form__label">
+                    Street Address
+                    <input class="form__input" type="text" placeholder="Ex. Church Way " />
+                </label>
+
+                <div class="form__group">
+                    <label class="form__label">
+                        City
+                        <input class="form__input" type="text" placeholder="Ex. Bradford" />
+                    </label>
+                    <label class="form__label">
+                        Post Code
+                        <input class="form__input" type="text" placeholder="Ex. BD1 9PB" />
+                    </label>
+                    <label class="form__label">
+                        Country
+                        <input class="form__input" type="text" placeholder="Ex. 1United Kingdom" />
+                    </label>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label">
+                        Invoice Date
+                        <div class="date-wrapper">
+                            <input class="form__input datepicker" type="text" placeholder="Selecciona una fecha" />
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </div>
+                    </label>
+    
+                    <label class="form__label">
+                        Payment Terms
+                        <select class="form__input" id="country">
+                            <option value="Net 30 Days">Net 30 Days</option>
+                            <option value="United States">United States</option>
+                            <option value="Canada">Canada</option>
+                          </select>
+                    </label>
+                  
+                </div>
+               
+            </form>
+        </section>
+
+        <section>
+            <form class="form">
+                <h2 class="form__title_list"></h2>
+                <h2 class="form__title_list">Item List</h2>
+
+                <div class="form__group">
+                    <label class="form__label">
+                        Item Name
+                        <input class="form__input" type="text" placeholder="Ex. Banner" />
+                    </label>
+                    <label class="form__label">
+                        Qty.
+                        <input class="form__input" type="text" placeholder="Ex. 1" />
+                    </label>
+                    <label class="form__label">
+                        Price
+                        <input class="form__input" type="text" placeholder="Ex. 156.0" />
+                    </label>
+
+                    <label class="form__label">
+                        Total
+                    </label>
+                    
+                </div>
+                <div class="form__group">
+                    <label class="form__label">
+            
+                        <input class="form__input" type="text" placeholder="Ex. Banner" />
+                    </label>
+                    <label class="form__label">
+                        <input class="form__input" type="text" placeholder="Ex. 1" />
+                    </label>
+                    <label class="form__label">
+                        <input class="form__input" type="text" placeholder="Ex. 156.0" />
+                    </label>
+
+                    <label class="form__label">
+                    </label>
+                </div>
+
+
+                <div class="form__buttons">
+                    <button class="form__button form__button--add">+Add New Item</button>
+                </div>
+
+                <div class="form__buttons">
+                    <button class="form__button form__button--cancel">Cancel</button>
+                    <input class="form__button form__button--save" type="submit" value="Save Changes" />
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+
+    <script>
+        $(document).ready(function() {
+          // Inicializar el DatePicker
+          $(".datepicker").datepicker({
+            dateFormat: "dd/mm/yy" // Formato de la fecha
+            // Otros parámetros opcionales...
+          });
+    
+          // Abrir el DatePicker al hacer clic en el ícono del calendario
+          $("#calendar-icon").click(function() {
+            $(".datepicker").datepicker("show");
+          });
+        });
+      </script>
+</body>
+</html>

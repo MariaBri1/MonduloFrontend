@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffcccc; /* Color de fondo rosa */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .registerForm {
+      width: 80%; /* Ancho del formulario */
+      background-color: #fff; /* Color de fondo blanco */
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+    .text-center {
+      text-align: center;
+    }
+    .form-header img {
+      margin-bottom: 20px;
+    }
+    .form-header h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .form-header h4 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .form-input label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .form-input input[type="text"],
+    .form-input input[type="email"],
+    .form-input input[type="password"],
+    .form-input input[type="number"],
+    .form-input select,
+    .form-input textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .form-input input[type="submit"] {
+      background-color: #ffb6c1; /* Color rosa */
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .form-input input[type="submit"]:hover {
+      background-color: #ff9eb4; /* Color rosa más oscuro */
+    }
+    .form-input p {
+      margin-top: 10px;
+    }
+    a {
+      color: #ffb6c1;
+    }
+    a:hover {
+      color: #ff9eb4;
+    }
+
+    /* Estilos adicionales */
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .form-row .form-input {
+      width: 30%; /* Ancho de cada campo */
+    }
+  </style>
+</head>
+<body>
+
+  <main class="registerForm">
+    <form>
+      <header class="text-center form-header">
+        <img src="https://placehold.co/150x150.png?text=Inicio%20de%20sesion" />
+        <h1>Registro</h1>
+        <h4>Ingresa la información para crear una cuenta.</h4>
+      </header>
+
+      <div class="form-row">
+        <div class="form-input">
+          <label>Nombres</label>
+          <input type="text" placeholder="Ej. Juan" required />
+        </div>
+
+        <div class="form-input">
+          <label>Apellidos</label>
+          <input type="text" placeholder="Ej. Pérez" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-input">
+          <label>Edad</label>
+          <input type="text" placeholder="Ej. 30" required />
+        </div>
+
+        <div class="form-input">
+          <label>Distrito</label>
+          <input type="text" placeholder="Ej. Lima" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-input">
+          <label>Dirección 1</label>
+          <input type="text" placeholder="Ej. Av. 123" required />
+        </div>
+
+        <div class="form-input">
+          <label>Dirección 2</label>
+          <input type="text" placeholder="Ej. Calle 456" required />
+        </div>
+
+        <div class="form-input">
+          <label>Dirección 3</label>
+          <input type="text" placeholder="Ej. Urb. ABC" required />
+        </div>
+      </div>
+
+      <div class="form-input">
+        <label>Sexo</label>
+        <select required>
+          <option value="">Selecciona tu sexo</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-input">
+        <label>Email</label>
+        <input type="email" placeholder="Ej. user@gmail.com" required />
+      </div>
+
+      <div class="form-input">
+        <label>Password</label>
+        <input type="password" placeholder="mipassword" required minlength="6" />
+      </div>
+
+      <input type="submit" value="Registrarse" />
+
+      <div class="form-input">
+        <p>¿Ya tienes una cuenta? <label for="showRegister"><a href="#">Inicia sesión aquí</a></label></p>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
