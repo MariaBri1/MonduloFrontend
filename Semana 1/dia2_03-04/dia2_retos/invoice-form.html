@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Form</title>
     <style>
-        /* 
+    /* 
       TODO: Terminar la maquetación del formulario del invoice-form añadiendo: Estilos, fuentes, colores
 
       https://res.cloudinary.com/dz209s6jk/image/upload/v1614355851/Challenges/r4lyr9u4uem9zskskhpv.jpg
@@ -114,8 +114,8 @@
                         Payment Terms
                         <select class="form__input" id="country">
                             <option value="Net 30 Days">Net 30 Days</option>
-                            <option value="United States">United States</option>
-                            <option value="Canada">Canada</option>
+                            <option value="United States">Net 20 Days</option>
+                            <option value="Canada">Net 10 Days</option>
                           </select>
                     </label>
                   
@@ -130,38 +130,48 @@
                 <h2 class="form__title_list">Item List</h2>
 
                 <div class="form__group">
-                    <label class="form__label">
-                        Item Name
+                    <div class="form__row">
+                        <label class="form__label">Item Name</label>
                         <input class="form__input" type="text" placeholder="Ex. Banner" />
-                    </label>
-                    <label class="form__label">
-                        Qty.
+                    </div>
+                    <div class="form__row">
+                        <label class="form__label">Qty.</label>
                         <input class="form__input" type="text" placeholder="Ex. 1" />
-                    </label>
-                    <label class="form__label">
-                        Price
-                        <input class="form__input" type="text" placeholder="Ex. 156.0" />
-                    </label>
-
-                    <label class="form__label">
-                        Total
-                    </label>
-                    
+                    </div>
+                    <div class="form__row">
+                        <label class="form__label">Price</label>
+                        <input class="form__input" type="text" placeholder="Ex. 156" />
+                    </div>
+                    <div class="form__row">
+                        <label class="form__label">Total</label>
+                        <h2 class="form__total">156</h2>
+                        <label class="form__label form__label--icon">
+                            <i class="fas fa-trash-alt"></i>
+                        </label>
+                    </div>
                 </div>
+
+
                 <div class="form__group">
                     <label class="form__label">
-            
                         <input class="form__input" type="text" placeholder="Ex. Banner" />
                     </label>
+                    
                     <label class="form__label">
                         <input class="form__input" type="text" placeholder="Ex. 1" />
                     </label>
+
                     <label class="form__label">
-                        <input class="form__input" type="text" placeholder="Ex. 156.0" />
+                        <input class="form__input" type="text" placeholder="Ex. 156" />
                     </label>
 
                     <label class="form__label">
+                        <h2 class="form__label">156</h2>
                     </label>
+
+                    <label class="form__label form__label--icon">
+            <i class="fas fa-trash-alt"></i>
+        </label>
                 </div>
 
 
@@ -182,13 +192,10 @@
 
     <script>
         $(document).ready(function() {
-          // Inicializar el DatePicker
           $(".datepicker").datepicker({
-            dateFormat: "dd/mm/yy" // Formato de la fecha
-            // Otros parámetros opcionales...
+            dateFormat: "dd/mm/yy" 
           });
     
-          // Abrir el DatePicker al hacer clic en el ícono del calendario
           $("#calendar-icon").click(function() {
             $(".datepicker").datepicker("show");
           });

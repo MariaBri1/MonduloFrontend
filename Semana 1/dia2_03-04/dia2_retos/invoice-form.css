@@ -26,11 +26,15 @@
   .form__title {
     color: #826fe9;
     font-size: 16px;
+    font-family: 'Noto Sans';
+    font-weight: bold;
   }
 
   .form__title_list {
     color: #cdc8ea;
-    font-size: 22px;
+    font-size: 24px;
+    font-family: 'Roboto';
+    font-weight: bold;
   }
   
   .form__label {
@@ -38,7 +42,9 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: 8px;
+    gap: 9px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
   }
   
   .form__input {
@@ -104,3 +110,19 @@
   .form__input.datepicker {
     padding-right: 30px; /* Espacio para el icono del calendario */
   }
+
+/**/
+.form__title_list {
+  font-size: 22px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  position: relative;
+}
+
+.form__title_list i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
